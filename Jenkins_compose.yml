@@ -1,13 +1,12 @@
 version: '3.1'
-
 services:
-  jenkins:
-   container_name: jenkins_container
-   image: sadiq_990/jenkinsdocker
-   ports:
-     - 8000:8080
-     - 8005:8080
-     - 50000:50000
-   volumes:
-     - /var/run/docker.sock:/var/run/docker.sock
-     - /opt/applications/jenkins3:/var/jenkins_home
+  s_jenkins:
+    container_name: jenkins_container
+    image: jenkins/jenkins:lts
+    ports:
+      - 8000:8080
+      - 8005:8080
+      - 50000:50000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/applications/jenkins_data:/var/jenkins_home
